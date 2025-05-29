@@ -19,7 +19,7 @@ const CreateTasks = () => {
     isDone : false
   }
 
-  const handleKeyDown = (event) => {
+  const handleKeyUp = (event) => {
       if(event.key === "Enter" && event.target.value !== ""){
           addTask(newTask);
           setJob("");
@@ -39,7 +39,7 @@ const CreateTasks = () => {
   return (
       <Container>
         <div className='flex mb-10'>
-            <input onKeyDown={handleKeyDown} value={job} onChange={handleOnChange} type='text' className='flex-grow border-2 border-pink-500 rounded-l-lg px-4 py-3 outline-none' placeholder='Write Your Task List'/>
+            <input onKeyDown={handleKeyUp} value={job} onChange={handleOnChange} type='text' className='flex-grow border-2 border-pink-500 rounded-l-lg px-4 py-3 outline-none' placeholder='Write Your Task List'/>
             <button onClick={handleOnClick} className='px-7 py-3 bg-pink-500 border-2 rounded-r-lg border-pink-500 text-white'>Add Task</button>
         </div>
       </Container>
